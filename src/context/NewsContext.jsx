@@ -13,11 +13,11 @@ export const NewsProvider = ({ children }) => {
 
   const apiKey = "90631fc46ca54956aaca5a3a05e9f8c9"; // Replace with env key in production
 
-  // 3️⃣ Fetch news based on selected category
+ 
   useEffect(() => {
     const getNews = async () => {
       try {
-        // Include category if selected
+  
         const url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=10${
           category ? `&category=${category}` : ""
         }&apiKey=${apiKey}`;
@@ -51,7 +51,7 @@ export const NewsProvider = ({ children }) => {
         visible,
         setVisible,
         category,
-        setCategory, // ✅ Now available for dropdown items
+        setCategory, 
       }}
     >
       {children}

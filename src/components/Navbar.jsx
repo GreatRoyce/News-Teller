@@ -7,7 +7,7 @@ const Navbar = () => {
     search,
     setSearch,
     setCategory,
-    category, // Optional: for showing active
+    category, 
   } = useContext(NewsContext);
 
   const categories = [
@@ -24,13 +24,13 @@ const Navbar = () => {
     <header className="grid grid-cols-1 gap-3 bg-white dark:bg-gray-800 shadow-md mb-[3vh] sm:text-center">
       <div className="max-w-7xl px-4 py-3 sm:flex sm:gap-10 sm:center items-center justify-between">
 
-        {/* 📰 Logo */}
+     
         <div className="text-2xl font-bold text-gray-900 gap-2 sm:self-center items-center flex dark:text-white">
           <div><Newspaper /></div>
           News Teller
         </div>
 
-        {/* 📂 Horizontal Category List */}
+    
         <div>
         <div className="flex flex-wrap gap-4 text-sm text-gray-700 dark:text-white ">
           {categories.map((cat) => (
@@ -51,7 +51,6 @@ const Navbar = () => {
         </div>
         
 
-        {/* 🔍 Search Bar */}
         <div className="w-[30vh] flex border-2 pl-2 rounded-2xl mt-4 border-red-800 items-center">
           <input
             className="w-[20vh] pl-1 text-[12px] outline-none text-md"

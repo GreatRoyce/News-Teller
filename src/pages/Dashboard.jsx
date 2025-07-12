@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { NewsContext } from "../context/NewsContext";
 
 function Dashboard() {
-  const { filteredArticles, error } = useContext(NewsContext); // ✅ Pull data from context
+  const { filteredArticles, error, categories} = useContext(NewsContext); // ✅ Pull data from context
 
   return (
     <>
@@ -32,13 +32,15 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Main Content Area */}
+
         <div className="p-4">
-          <h2 className="text-xl font-bold mb-4">Top Headlines</h2>
+          <h2 className="text-xl font-bold mb-4">
+
+          </h2>
 
           {error && <p className="text-red-600">{error}</p>}
 
-          <div className="sm:grid sm:grid-flow-row space-y-4 grid self-center gap-4 md:grid-cols-3">
+          <div className="sm:grid sm:grid-flow-row py-4 grid self-center gap-5 md:grid-cols-3">
             {filteredArticles.map((item, index) => (
               <div
                 key={index}
@@ -66,7 +68,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      {/* Footer */}
+  
 <footer className="mt-10 w-full bg-gray-900 text-white text-center py-6">
   <p className="text-sm sm:text-base">
     &copy; {new Date().getFullYear()} News Teller. Powered by UnArmedALien &nbsp;
