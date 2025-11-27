@@ -24,15 +24,20 @@ const Navbar = () => {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     // Toggle dark class on root element for Tailwind dark mode
-    document.documentElement.classList.toggle('dark');
+    document.documentElement.classList.toggle("dark");
   };
 
   return (
-    <header className={`${isDarkMode ? 'dark:bg-gray-900' : 'bg-white'} shadow-lg border-b ${isDarkMode ? 'dark:border-gray-700' : 'border-gray-200'} sticky top-0 z-50`}>
+    <header
+      className={`${
+        isDarkMode ? "dark:bg-gray-900" : "bg-white"
+      } shadow-lg border-b ${
+        isDarkMode ? "dark:border-gray-700" : "border-gray-200"
+      } sticky top-0 z-50`}
+    >
       <div className="w-full mx-auto px-3 sm:px-4">
         {/* Main Navigation - Compact layout */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 gap-3">
-          
           {/* Logo/Brand - More compact */}
           <div className="flex items-center justify-center sm:justify-start sm:w-auto">
             <div className="flex items-center space-x-2 group cursor-pointer">
@@ -60,12 +65,18 @@ const Navbar = () => {
                     }`}
                   >
                     <span className="text-sm">{cat.icon}</span>
-                    <span className="capitalize hidden xs:inline">{cat.name}</span>
+                    <span className="capitalize hidden xs:inline">
+                      {cat.name}
+                    </span>
                   </button>
                 ))}
               </div>
               {/* Scroll indicator */}
-              <div className={`absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l ${isDarkMode ? 'from-gray-900' : 'from-white'} to-transparent pointer-events-none`} />
+              <div
+                className={`absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l ${
+                  isDarkMode ? "from-gray-900" : "from-white"
+                } to-transparent pointer-events-none`}
+              />
             </div>
           </nav>
 
@@ -75,20 +86,32 @@ const Navbar = () => {
             <button
               onClick={toggleDarkMode}
               className={`p-2 rounded-lg transition-all duration-200 ${
-                isDarkMode 
-                  ? 'bg-gray-700 text-yellow-300 hover:bg-gray-600' 
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                isDarkMode
+                  ? "bg-gray-700 text-yellow-300 hover:bg-gray-600"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
               aria-label="Toggle dark mode"
             >
               {isDarkMode ? (
                 // Sun icon for light mode
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               ) : (
                 // Moon icon for dark mode
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                 </svg>
               )}
@@ -164,22 +187,27 @@ const Navbar = () => {
       </div>
 
       {/* Active Category Bar - Desktop - More compact */}
-      <div className={`hidden sm:block border-t ${isDarkMode ? 'dark:border-gray-800' : 'border-gray-100'}`}>
+      <div
+        className={`hidden sm:block border-t ${
+          isDarkMode ? "dark:border-gray-800" : "border-gray-100"
+        }`}
+      >
         <div className="w-full mx-auto px-3 sm:px-4">
           <div className="py-1 flex items-center space-x-2 text-xs">
             <span className="text-gray-500 dark:text-gray-400">Viewing:</span>
             <span className="flex items-center space-x-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full">
-              <span className="text-sm">
+              <span className="text-sm capitalize">
                 {categories.find((c) => c.name === category)?.icon}
               </span>
-              <span className="font-medium capitalize">{category}</span>
             </span>
             {search && (
               <>
                 <span className="text-gray-500 dark:text-gray-400">•</span>
                 <span className="flex items-center space-x-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 px-2 py-1 rounded-full">
                   <span className="text-sm">🔍</span>
-                  <span className="font-medium truncate max-w-[120px]">"{search}"</span>
+                  <span className="font-medium truncate max-w-[120px]">
+                    "{search}"
+                  </span>
                 </span>
               </>
             )}
