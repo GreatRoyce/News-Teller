@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { NewsContext } from "../context/NewsContext";
-import Newspaper from "../assets/IconicImages/Newspaper";
+import Newspaper from "../assets/Newsteller.png";
 
 const categories = [
   { name: "general", icon: "general" },
@@ -35,18 +35,16 @@ const Navbar = () => {
         isDarkMode ? "dark:border-gray-700" : "border-gray-200"
       } sticky top-0 z-50`}
     >
-      <div className="w-full mx-auto px-3 sm:px-4">
+      <div className="w-full mx-auto px-4 sm:px-8">
         {/* Main Navigation - Compact layout */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-3 gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1 gap-1">
           {/* Logo/Brand - More compact */}
           <div className="flex items-center justify-center sm:justify-start sm:w-auto">
             <div className="flex items-center space-x-2 group cursor-pointer">
-              <div className="text-blue-600 group-hover:scale-110 transition-transform duration-200">
-                <Newspaper />
-              </div>
-              <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent whitespace-nowrap">
-                News Teller
-              </h1>
+              <div
+                className="bg-contain border-red-700 w-24 h-24 bg-no-repeat bg-center transition-transform duration-200"
+                style={{ backgroundImage: `url(${Newspaper})` }}
+              ></div>
             </div>
           </div>
 
@@ -215,7 +213,7 @@ const Navbar = () => {
         </div>
       </div>
     </header>
-  ); 
+  );
 };
 
 export default Navbar;
